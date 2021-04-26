@@ -1,1 +1,2 @@
-# color_swtach
+# React project
+## Frontend for color swtach project
