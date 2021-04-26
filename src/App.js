@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import './App.css';
 import {
   Button
 } from 'reactstrap';
@@ -25,19 +24,24 @@ class App extends Component {
   }
 
   renderColors = () => {
-    
     return (
       this.state.colorList.map((color, idx) => {
         const style = {
           width: "200px",
           height: "200px",
         }
+
         if (color.type === "rgb") {
           style.backgroundColor = `rgb(${color.red}, ${color.green}, ${color.blue})`;
         } else if (color.type === "hsl") {
           style.backgroundColor = `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`;
         }
-        return <h5 key={idx} style={style} className="d-flex align-items-center justify-content-center font-weight-bold text-white">{color.type}({color.red || color.hue}, {color.green || color.saturation}, {color.blue || color.lightness})</h5>
+
+        return (
+          <h5 key={idx} style={style} className="d-flex align-items-center justify-content-center font-weight-bold text-white">
+            {color.type}({color.red || color.hue}, {color.green || color.saturation}, {color.blue || color.lightness})
+          </h5>
+        )
       })
     );
   }
@@ -45,7 +49,9 @@ class App extends Component {
   render() {
     return (
       <div className="App p-5">
-        <Button onClick={() => this.getColors()}>Generate colors</Button>
+        <Button onClick={() => this.getColors()}>
+          Generate colors
+        </Button>
         <div className="d-flex mt-5">
           {this.renderColors()}
         </div>
