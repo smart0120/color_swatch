@@ -1,2 +1,2 @@
 # React project
-## Frontend for color swtach project
+## Frontend for color swatch project
